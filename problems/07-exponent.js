@@ -22,7 +22,16 @@ exponent(5, 5); // 3125
 
 function exponent(num, power) {
     // Your code here 
+    if (power === 1) return num;
+    if (power === -1) return 1/num;
+    if (power > 0) return (exponent(num, --power) * num);
+    if (power < 0) return (exponent(num, ++ power) * 1/num);
 }
+
+console.log(exponent(3, 2)); // 9
+console.log(exponent(2, -2)); // 1/4 (or 0.25)
+// exponent(5, 5); // 3125
+
   
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
