@@ -42,8 +42,19 @@ times `advancedExponent` is being recursively called.
 
 function advancedExponent(b, n) {
   // Your code here 
+  if(n === 1) return b;
+  if(n === 0) return 1;
+  //even
+  if(n % 2 === 0) {
+    let halfPower = advancedExponent(b, n/2)
+    return halfPower * halfPower;
+  } else {
+    let halfPower = advancedExponent(b, (n - 1) / 2);
+    return b * halfPower * halfPower;
+  }
 }
-
+debugger
+console.log(advancedExponent(2, 10)); // 1024
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
